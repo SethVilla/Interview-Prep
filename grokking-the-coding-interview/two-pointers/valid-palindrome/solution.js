@@ -21,6 +21,25 @@ export const isPalindrome = (s) => {
     return true;
 }
 
+const isValidPalindrome = (s) => {
+    let left = 0, right = s.length - 1;
+
+    while (left < right) {
+        while (left < right && !isAlphaNumeric(s[left])) left++
+        while (right > left && !isAlphaNumeric(s[right])) right--
+
+        if (s[left].toLowerCase() !== s[right].toLowerCase()) {
+            return false;
+        }
+
+        left++;
+        right--;
+
+    }
+
+    return true;
+}
+
 const isAlphaNumeric = (c) => {
     const code = c.charCodeAt(0);
     return (
