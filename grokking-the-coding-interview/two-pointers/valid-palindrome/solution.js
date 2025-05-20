@@ -5,10 +5,28 @@
 // O(N/2) => O(N)
 
 export const isPalindrome = (s) => {
-    for (let low = 0, high = s.length - 1; low < s.length / 2; low++, high--) {
-        if (s[low] !== s[high]) {
+
+    // regex
+    // delimiters of pattern / /
+    // match a group of characters []
+    // negation/ complement [^]
+    // not alphanumeric [^a-zA-Z0-9]
+    // All occurrences /g
+    const sans = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    // Replace this placeholder return statement with your code
+    for (let low = 0, high = sans.length - 1; low < sans.length / 2; low++, high--) {
+        if (sans[low] !== sans[high] ) {
             return false;
         }
     }
     return true;
+}
+
+const isAlphaNumeric = (c) => {
+    const code = c.charCodeAt(0);
+    return (
+        code >= 48 && code <= 57 || // 0 - 9
+        code >= 65 && code <= 90 || // A - Z
+        code >= 97 && code <= 122 // a - z
+    )
 }
