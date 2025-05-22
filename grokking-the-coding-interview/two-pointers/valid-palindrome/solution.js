@@ -4,8 +4,7 @@
 // stop if there is a mismatch
 // O(N/2) => O(N)
 
-export const isPalindrome = (s) => {
-
+    const isPalindrome = (s) => {
     // regex
     // delimiters of pattern / /
     // match a group of characters []
@@ -47,4 +46,28 @@ const isAlphaNumeric = (c) => {
         code >= 65 && code <= 90 || // A - Z
         code >= 97 && code <= 122 // a - z
     )
+}
+
+// literal regex
+const educativePalindrome = (s) => {
+    let left = 0, right = s.length - 1;
+
+    while (left < right) {
+        while (left < right && !/[a-zA-Z0-9]/.test(s[left])) {
+            left++;
+        }
+
+        while (left < right && !/[a-zA-Z0-9]/.test(s[right])) {
+            right--;
+        }
+
+        if (s[left].toLowerCase() !== s[right].toLowerCase()) {
+            return false;
+        }
+
+        left++;
+        right--;
+    }
+
+    return true;
 }
