@@ -1,28 +1,33 @@
 import LinkedList from "./linked_list.js";
 import LinkedListNode from "./linked_list_node.js";
 
-function removeNthLastNode(head, n) {
+/*
+    constraints
+    - the number of nodes in the list is k
+    - 1 <= n <= k
+ */
 
-    let slow = head;
-    let fast = head;
-    let prevNode = null;
+const removeNthLastNode = (head, n) => {
 
-    for (let i = 1; i <= n;i++) {
-        fast = fast.next;
+    let left = head
+    let right = head
+
+    for (let i = 0; i < n; i++) {
+        right = right.next
     }
 
-    while (fast != null) {
-        prevNode = slow;
-        slow = slow.next
-        fast = fast.next;
+    // if we reach null it means to return the head
+    if (!right) {
+        return left.next
     }
 
-    if (!prevNode) {
-        head = head.next;
-    } else {
-        prevNode.next = prevNode.next.next;
+    // stop before reaching the end in order to remove the required node
+    while (right.next != null) {
+        right = right.next
+        left = left.next
     }
 
-    // Replace this placeholder return statement with your code
+    left.next = left.next.next
+
     return head;
 }
