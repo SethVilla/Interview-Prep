@@ -1,5 +1,6 @@
 
 const threeSum = (array) => {
+    // Sort the input array in ascending order
     const nums = array.sort((a, b) => a - b);
     const result = []
     const length = array.length;
