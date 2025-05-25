@@ -41,3 +41,11 @@ function validWordAbbreviation(word, abbr) {
     return wordIndex === word.length && abbrIndex === abbr.length
 
 }
+
+/*
+Time complexity
+The time complexity of the solution above is O(n), where n is the length of the abbreviation string abbr. This is because the solution processes each character of abbr exactly once.
+
+Space complexity
+The space complexity is O(1)because the algorithm uses constant extra space regardless of the input size.
+ */

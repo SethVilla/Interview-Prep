@@ -34,3 +34,11 @@ const sortColors = (colors) => {
 }
 
 export { sortColors }
+
+/*
+Time complexity
+The time complexity of this solution is O(n) since we’re only traversing the array once.
+
+Space complexity
+The space complexity of this solution is O(1) since no extra space is used.
+ */

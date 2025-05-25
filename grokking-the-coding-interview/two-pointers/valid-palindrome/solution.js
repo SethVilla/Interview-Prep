@@ -71,3 +71,15 @@ const educativePalindrome = (s) => {
 
     return true;
 }
+
+/*
+Time complexity
+
+The time complexity of the above solution is
+O(n), where n is the number of characters in the string.
+
+Space complexity#
+
+The space complexity of the above solution is O(1).
+
+ */

@@ -31,3 +31,11 @@ const removeNthLastNode = (head, n) => {
 
     return head;
 }
+
+/*
+Time complexity
+The time complexity is O(N), where N is the number of nodes in the linked list.
+
+Space complexity
+The space complexity is O(1) because we use constant space to store two pointers.
+ */

@@ -41,3 +41,16 @@ if (args.length > 0) {
     const arrayArg = JSON.parse(args[0]);
     console.log(threeSum(arrayArg));
 }
+
+/*
+Time complexity#
+Let n represent the length of the nums array. Then:
+- Sorting the array takes O(nlog(n))
+- The nested iteration takes O(n^2),
+ where each nums[i] is paired with a two pointer traversal over the remaining elements of the array.
+ Therefore, the overall time complexity is O(n^2).
+
+ Space complexity#
+Apart from the space used by the built-in sorting algorithm, the algorithm’s space complexity is constant, O(1)
+
+ */
