@@ -23,3 +23,18 @@ function isPalindrome(s) {
     return true;
 }
 
+function isPalindromeRecursive(s, left = 0, right = s.length - 1, skipped = false) {
+    while (left < right) {
+        if (s[left] === s[right]) {
+            left++;
+            right--;
+        } else {
+            // If already skipped once, can't skip again
+            if (skipped) return false;
+
+            // Try skipping one character (either left or right)
+            return isPalindrome(s, left + 1, right, true) || isPalindrome(s, left, right - 1, true);
+        }
+    }
+    return true;
+}
