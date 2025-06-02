@@ -33,8 +33,11 @@ function isPalindromeRecursive(s, left = 0, right = s.length - 1, skipped = fals
             if (skipped) return false;
 
             // Try skipping one character (either left or right)
-            return isPalindrome(s, left + 1, right, true) || isPalindrome(s, left, right - 1, true);
+            return isPalindromeRecursive(s, left + 1, right, true) || isPalindromeRecursive(s, left, right - 1, true);
         }
     }
     return true;
 }
+
+
+// O(n) time and takes O(1) space
