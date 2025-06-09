@@ -1,3 +1,9 @@
+// 739. Daily Temperatures
+
+// https://leetcode.com/problems/daily-temperatures/description/
+
+// Given an array of integers temperatures represents the daily temperatures, return an array answer such that answer[i] is the number of days you have to wait after the ith day to get a warmer temperature. If there is no future day for which this is possible, keep answer[i] == 0 instead.
+
 /**
  * @param {number[]} temperatures
  * @return {number[]}
@@ -26,17 +32,15 @@ var dailyTemperatures = function(temperatures) {
  * @param {number[]} temperatures
  * @return {number[]}
  */
-var dailyTemperatures = function(temperatures) {
-    const answer = new Array(temperatures.length).fill(0);
-    const stack = []; // stack stores indices of `temperatures`
-
-    for (let i = 0; i < temperatures.length; i++) {
+const dailyTemperatures = (temperatures) => {
+    const answer = new Array(temperatures.length).fill(0)
+    const stack = []
+    for (let i= 0; i < temperatures.length;i++) {
         while (stack.length && temperatures[i] > temperatures[stack[stack.length - 1]]) {
-            const prevIndex = stack.pop();
-            answer[prevIndex] = i - prevIndex;
+            const s = stack.pop()
+            answer[s] = i - s
         }
-        stack.push(i);
+        stack.push(i)
     }
-
-    return answer;
+    return answer
 };
