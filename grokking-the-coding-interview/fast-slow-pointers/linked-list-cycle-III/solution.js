@@ -29,3 +29,11 @@ export const countCycleLength = (head) => {
     // Replace this placeholder return statement with your code
     return 0;
 }
+
+// Time complexity
+// The time complexity of the algorithm is
+// O(n), where nis the number of nodes in the linked list.
+
+// Space complexity
+// The space complexity of the algorithm above is
+// O(1).
