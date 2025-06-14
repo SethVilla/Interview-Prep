@@ -1,4 +1,4 @@
-const findRepeatedDnaSequence = (s) => {
+const findRepeatedDnaSequences = (s) => {
 
     const n = s.length;
 
@@ -51,4 +51,4 @@ const findRepeatedDnaSequence = (s) => {
     return Array.from(output);
 }
 
-console.log(findRepeatedDnaSequence("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"))
+console.log(findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"))
