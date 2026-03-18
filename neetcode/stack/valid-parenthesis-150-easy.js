@@ -1,23 +1,31 @@
 class Solution {
+    /**
+     * @param {string} s
+     * @return {boolean}
+     */
     isValid(s) {
         const stack = [];
         const map = {
-            '(': ')',
-            '{': '}',
-            '[': ']'
+            ')': '(',
+            '}': '{',
+            ']': '['
         };
 
-        for (const char of s) {
-            if (map[char]) {
-                stack.push(char);
+        for (const c of s) {
+
+            if (c in map) {
+                if (stack.length && stack[stack.length - 1] == map[c]) {
+                    stack.pop()
+                } else {
+                    return false
+                }
             } else {
-                if (stack.length === 0) return false;
+                stack.push(c)
             }
-            if (stack.length === 0) return false;
-            const last = stack.pop();
-            if (map[last] !== char) return false;
         }
-        return stack.length === 0;  
+
+        return !stack.length
+
     }
 }
 

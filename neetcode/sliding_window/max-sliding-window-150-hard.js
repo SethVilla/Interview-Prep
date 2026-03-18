@@ -1,4 +1,30 @@
+/*
+    Steps:
+
+    Initialize
+        - output array
+        - deque
+        - left pointer
+        - right pointer
+
+    While loop
+        - while right pointer is less than length of nums
+        - while deque is not empty and last element of deque is less than current right pointer
+            - pop from deque
+        - push right pointer to deque
+        - if left pointer is greater than first element of deque
+            - shift from deque
+        - if right pointer + 1 is greater than or equal to k
+            - push first element of deque to output
+            - increment left pointer
+        - increment right pointer
+    - return output
+*/
+
 class Solution {
+    
+    
+    
     maxSlidingWindow(nums, k) {
         const output = [];
         const deque = [];
